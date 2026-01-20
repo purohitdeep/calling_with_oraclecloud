@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCS VoIP POC</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!--
+      Add the Oracle Communication Services Web SDK here, for example:
+      <script src="https://<your-ocs-cdn>/ocs-web-sdk.min.js"></script>
+    -->
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Oracle Communication Services VoIP POC</h1>
+        <p class="subtitle">VoIP calls between two OCS users.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Local User</h2>
+        <div class="field">
+          <label for="user-id">User ID</label>
+          <input id="user-id" type="text" placeholder="ocs-user-1" />
+        </div>
+        <div class="field">
+          <label for="access-token">Access Token</label>
+          <textarea id="access-token" rows="3" placeholder="Paste access token"></textarea>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Remote User</h2>
+        <div class="field">
+          <label for="callee-id">Callee User ID</label>
+          <input id="callee-id" type="text" placeholder="ocs-user-2" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Call Controls</h2>
+        <div class="button-row">
+          <button id="init-agent">Initialize Agent</button>
+          <button id="start-call" disabled>Start Call</button>
+          <button id="accept-call" disabled>Accept Call</button>
+          <button id="hold-call" disabled>Hold</button>
+          <button id="resume-call" disabled>Resume</button>
+          <button id="end-call" disabled>End Call</button>
+        </div>
+        <div class="status">
+          <span class="label">Status:</span>
+          <span id="call-status">Not initialized</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Logs</h2>
+        <pre id="log-output"></pre>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
